@@ -1,59 +1,238 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🏥 HMS — Hospital Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A full-featured, modern Hospital Management System built with **Laravel 12** and **Filament 5**, backed by **PostgreSQL**. HMS is designed to streamline day-to-day hospital operations including patient management, OPD/IPD encounters, pharmacy, laboratory, radiology, billing, and staff coordination.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## ✨ Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 🧑‍⚕️ Patient Management
+- Patient registration with MRN (Medical Record Number)
+- Patient portal for self-service access
+- Patient history tracking
+- Insurance management & coverage
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 🏠 OPD & IPD Encounters
+- Outpatient Department (OPD) encounter management
+- Inpatient Department (IPD) with bed assignment
+- Triage scoring and clinical notes
+- Appointment scheduling
 
-## Learning Laravel
+### 💊 Pharmacy
+- Inventory tracking with reorder alerts
+- Prescription management & dispensing
+- Pharmacy movements log
+- Pharmacy sales reporting dashboard
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### 🧪 Laboratory & Radiology
+- Lab test requests and result management
+- Radiology orders with findings & result artifacts
+- Service request workflow (request → verify → fulfill)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 💰 Billing & Payments
+- Service request-based billing
+- Multi-mode payment (cash, insurance, waived)
+- Invoice generation and PDF receipts
+- Patient share vs. insurance share breakdown
 
-## Laravel Sponsors
+### 🏢 Staff & Departments
+- Doctors, Nurses, and Staff management
+- Department organization with foreign key relationships
+- Role-based access control via **Filament Shield**
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 📦 Inventory
+- Medical supply inventory with stock tracking
+- Inventory transaction log
+- Batch and expiry date management
 
-### Premium Partners
+### 📊 Reporting
+- Hospital dashboard with key metrics
+- Pharmacy report dashboard
+- Payment and billing reports
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+---
 
-## Contributing
+## 🛠️ Tech Stack
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+| Layer | Technology |
+|-------|-----------|
+| Framework | Laravel 12 |
+| Admin Panel | Filament 5 |
+| Database | PostgreSQL |
+| Frontend Assets | Vite + TailwindCSS 4 |
+| Auth & Roles | Filament Shield (Spatie Permissions) |
+| PHP | 8.2+ |
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## ⚙️ Requirements
 
-## Security Vulnerabilities
+- PHP >= 8.2 with extensions: `pdo_pgsql`, `pgsql`, `intl`, `zip`, `mbstring`, `openssl`, `curl`, `fileinfo`
+- PostgreSQL >= 14
+- Composer 2.x
+- Node.js >= 18 & npm
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
-## License
+## 🚀 Installation
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/figo-ui/HMS.git
+cd HMS
+```
+
+### 2. Install PHP dependencies
+
+```bash
+php composer.phar install
+# or if composer is globally installed:
+composer install
+```
+
+### 3. Install JavaScript dependencies
+
+```bash
+npm install
+```
+
+### 4. Configure environment
+
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+
+Edit `.env` and update your database credentials:
+
+```env
+DB_CONNECTION=pgsql
+DB_HOST=127.0.0.1
+DB_PORT=5432
+DB_DATABASE=HMS
+DB_USERNAME=postgres
+DB_PASSWORD=your_password
+```
+
+### 5. Create PostgreSQL database
+
+```sql
+CREATE DATABASE "HMS";
+```
+
+### 6. Run migrations
+
+```bash
+php artisan migrate
+```
+
+### 7. Build frontend assets
+
+```bash
+npm run build
+```
+
+### 8. (Optional) Seed initial data
+
+```bash
+php artisan db:seed
+```
+
+---
+
+## 🧑‍💻 Development
+
+Start the development server with hot reloading:
+
+```bash
+composer dev
+# Runs: php artisan serve + queue:listen + npm run dev concurrently
+```
+
+Or run individually:
+
+```bash
+php artisan serve
+npm run dev
+php artisan queue:listen --tries=1
+```
+
+---
+
+## 🔐 Roles & Permissions
+
+HMS uses **Filament Shield** for role-based access control. After migrating, create a super-admin:
+
+```bash
+php artisan shield:super-admin
+```
+
+Sync permissions for all resources:
+
+```bash
+php artisan shield:generate --all
+```
+
+---
+
+## 🗄️ Database Schema
+
+The system includes 50+ migrations covering:
+
+| Module | Tables |
+|--------|--------|
+| Core | `users`, `patients`, `doctors`, `nurses`, `staff` |
+| Clinical | `appointments`, `o_p_d_s`, `i_p_d_s`, `triages`, `patient_histories` |
+| Facilities | `beds`, `departments`, `laboratories`, `radiologies` |
+| Pharmacy | `pharmacies`, `pharmacy_movements`, `pharmacy_sales`, `prescriptions` |
+| Inventory | `inventories`, `inventory_transactions` |
+| Billing | `service_requests`, `services`, `payments` |
+| Admin | `settings`, `insurances`, `reports`, `notifications` |
+| Auth | `roles`, `permissions`, `model_has_roles` (Spatie) |
+
+---
+
+## 📁 Project Structure
+
+```
+app/
+├── Filament/
+│   ├── Resources/     # Admin panel resources (CRUD)
+│   ├── Pages/         # Custom pages (Dashboard, Portal)
+│   └── Widgets/       # Dashboard widgets
+├── Models/            # Eloquent models
+├── Services/          # Business logic services
+├── Events/            # Domain events (PaymentRequested, etc.)
+└── Policies/          # Authorization policies
+
+database/
+├── migrations/        # 51 migration files
+└── seeders/
+
+resources/
+├── views/             # Blade templates & emails
+└── css/               # Tailwind / Filament styles
+```
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/my-feature`)
+3. Commit your changes (`git commit -m 'Add my feature'`)
+4. Push to the branch (`git push origin feature/my-feature`)
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+This project is open-source and available under the [MIT License](https://opensource.org/licenses/MIT).
+
+---
+
+## 👨‍💻 Author
+
+Built with ❤️ by [figo-ui](https://github.com/figo-ui)
