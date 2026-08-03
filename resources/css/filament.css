@@ -1,0 +1,7 @@
+@import 'tailwindcss';
+
+@source '../../vendor/filament/**/*.blade.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+/* Hide scrollbars on Filament pages */

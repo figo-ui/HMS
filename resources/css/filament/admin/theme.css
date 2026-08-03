@@ -1,0 +1,23 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+@source '../../../../app/Filament/**/*';
+@source '../../../../resources/views/filament/**/*';
+
+/* Login page background image */
+.fi-simple-auth-page {
+    background-image: url('/images/login-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Hide scrollbars */
+.fi-body {
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
